@@ -11,8 +11,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <img
+        src="background.jpg"
+        style={{
+          position: 'fixed',
+          right: 0,
+          bottom: 0,
+          minWidth: '100%',
+          minHeight: '100%',
+          zIndex: -1,
+          opacity: 0.8
+        }}
+      />
       <Grid container>
-        <Grid item xs={12}>
+        <Grid item className="flex justify-center m-48" xs={12}>
           <SearchBar />
         </Grid>
       </Grid>

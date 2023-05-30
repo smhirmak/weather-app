@@ -4,16 +4,10 @@ import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 import { AxiosClient } from '@/axios';
 import IWeather from '@/types/IWeather';
-import { Box, Typography } from '@mui/material';
+import CityWeather from '@/components/weatherDetail/CityWeather';
 
 const CityPage: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherResponse }) => {
-  return (
-    <Box>
-      <Typography>{cityWeatherResponse.name}</Typography>
-      <Typography>{Math.round(cityWeatherResponse.main.temp)}</Typography>
-      <Typography>{Math.round(cityWeatherResponse.main.feels_like)}</Typography>
-    </Box>
-  );
+  return <CityWeather cityWeatherResponse={cityWeatherResponse} />;
 };
 
 export default CityPage;

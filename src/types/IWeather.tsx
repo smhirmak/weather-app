@@ -21,4 +21,10 @@ export default interface IWeather {
     country: string;
   };
   name: string;
+  dt: number;
+  list: any[];
+  city: {
+    name: string;
+    country: string;
+  };
 }

@@ -21,14 +21,14 @@ export default function App(props: MyAppProps) {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <body id="__next">
+      <div id="__next">
         <CssBaseline />
         <CacheProvider value={cache}>
           <Layout>
             <Component {...pageProps} />
           </Layout>
         </CacheProvider>
-      </body>
+      </div>
     </ThemeProvider>
   );
 }

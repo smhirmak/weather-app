@@ -20,7 +20,7 @@ const SearchBar = () => {
   };
   return (
     <form>
-      <Box className="flex justify-center pt-10">
+      <Box className="flex justify-center items-center pt-10">
         <TextField
           variant="outlined"
           label="Please enter a city name"
