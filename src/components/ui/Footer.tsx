@@ -1,18 +1,26 @@
 import React from 'react';
-import { Container, Grid, Box, Typography } from '@mui/material';
+import { Container, Grid, Box, Typography, useMediaQuery } from '@mui/material';
 import MediaLinks from '../links/MediaLinks';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import { useTheme } from '@mui/material/styles';
+import { useRouter } from 'next/router';
 
 const Footer = () => {
+  const themePage = useTheme();
+  const isMobile = useMediaQuery(themePage.breakpoints.down('md'));
+  const { asPath } = useRouter();
   return (
-    <Container maxWidth={'xl'}>
-      <Grid container display={'flex'} justifyContent={'center'} columnSpacing={20} mb={4}>
+    <Box
+      className={
+        isMobile && asPath !== '/' ? 'flex justify-center mt-20 mb-5' : 'flex justify-center mt-52'
+      }>
+      <Grid container className="flex justify-center" columnSpacing={isMobile ? 3 : 20}>
         <Grid item>
           <Box>
-            <Typography variant="h5" color={'#fff'} mb={2}>
+            <Typography variant={isMobile ? 'h6' : 'h5'} color={'#fff'} mb={2}>
               Social Media
             </Typography>
             <Box display={'flex'} flexDirection={'column'} alignItems={'start'}>
@@ -40,7 +48,7 @@ const Footer = () => {
             flexDirection={'column'}
             justifyContent={'center'}
             alignItems={'center'}>
-            <Typography variant="h5" color={'#fff'} mb={2}>
+            <Typography variant={isMobile ? 'h6' : 'h5'} color={'#fff'} mb={2}>
               About
             </Typography>
             <MediaLinks
@@ -56,7 +64,7 @@ const Footer = () => {
             flexDirection={'column'}
             justifyContent={'center'}
             alignItems={'center'}>
-            <Typography variant="h5" color={'#fff'} mb={2}>
+            <Typography variant={isMobile ? 'h6' : 'h5'} color={'#fff'} mb={2}>
               Help
             </Typography>
             <MediaLinks href="/" name="FAQ" />
@@ -64,7 +72,7 @@ const Footer = () => {
           </Box>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 

@@ -1,8 +1,11 @@
 import SearchBar from '@/components/searchBar/SearchBar';
+import { Container, Grid, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import Head from 'next/head';
-import { Container, Grid, Slider } from '@mui/material';
 
 export default function Home() {
+  const themePage = useTheme();
+  const isMobile = useMediaQuery(themePage.breakpoints.down('md'));
   return (
     <Container>
       <Head>
@@ -13,6 +16,7 @@ export default function Home() {
       </Head>
       <img
         src="background.jpg"
+        alt=""
         style={{
           position: 'fixed',
           right: 0,
@@ -24,7 +28,10 @@ export default function Home() {
         }}
       />
       <Grid container>
-        <Grid item className="flex justify-center m-48" xs={12}>
+        <Grid
+          item
+          className={isMobile ? 'flex justify-center mt-20' : 'flex justify-center mt-24'}
+          xs={12}>
           <SearchBar />
         </Grid>
       </Grid>
