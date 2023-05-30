@@ -1,6 +1,7 @@
 import IWeather from '@/types/IWeather';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
+import AirIcon from '@mui/icons-material/Air';
 import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import OpacityIcon from '@mui/icons-material/Opacity';
@@ -8,6 +9,7 @@ import ThermostatIcon from '@mui/icons-material/Thermostat';
 import { Box, Divider, Grid, Slider, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import Video from './Video';
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherResponse }) => {
@@ -61,37 +63,9 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
   const cityName = cityWeatherResponse.city.name;
   const isProvince = cityWeatherResponse.city.name.includes('Province');
 
-  const video = [
-    'raining.mp4',
-    'clear-sky.mp4',
-    'clouds.mp4',
-    'thunderstorm.mp4',
-    'snow.mp4',
-    'foggy.mp4'
-  ];
-
   return (
     <Box className="m-52">
-      <video
-        autoPlay
-        muted
-        loop
-        style={{
-          position: 'fixed',
-          right: 0,
-          bottom: 0,
-          minWidth: '100%',
-          minHeight: '100%',
-          zIndex: -1,
-          opacity: 0.4
-        }}>
-        {rawDescription.includes('rain') ? <source src={video[0]} type="video/mp4" /> : ''}
-        {rawDescription.includes('clear') && <source src={video[1]} type="video/mp4" />}
-        {rawDescription.includes('clouds') && <source src={video[2]} type="video/mp4" />}
-        {rawDescription.includes('thunderstorm') && <source src={video[3]} type="video/mp4" />}
-        {rawDescription.includes('snow') && <source src={video[4]} type="video/mp4" />}
-        {rawDescription.includes('mist') && <source src={video[5]} type="video/mp4" />}
-      </video>
+      <Video rawDescription={rawDescription} />
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
           <Typography variant="h2">
@@ -145,6 +119,13 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
               <OpacityIcon className="mr-2" />
               <Typography variant="h5">
                 Humidity: %{Math.round(cityWeatherResponse.list[value as number].main.humidity)}
+              </Typography>
+            </Box>
+            <Divider sx={{ borderBottomWidth: 2 }} />
+            <Box className="flex  items-center">
+              <AirIcon className="mr-2" />
+              <Typography variant="h5">
+                Wind Speed: {Math.round(cityWeatherResponse.list[value as number].wind.speed)}m/s
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
