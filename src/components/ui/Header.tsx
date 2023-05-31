@@ -20,7 +20,7 @@ const Header = () => {
   };
   return (
     <Grid container className="flex flex-row justify-center items-center mt-8">
-      <Grid item xs={12} className="flex justify-center items-center">
+      <Grid item xs={11.3} className="flex justify-center items-center">
         <Box>
           <Link href={'/'} style={{ textDecoration: 'none', color: 'white' }}>
             {!isMobile ? (
@@ -60,9 +60,7 @@ const Header = () => {
           <Box>
             <Box>
               <FormControlLabel
-                className={
-                  isMobile ? 'flex justify-center items-center mt-4' : 'fixed top-24 right-24'
-                }
+                className={isMobile ? 'flex justify-center items-center mt-4' : 'contents '}
                 control={
                   !checked ? <SearchIcon onClick={handleChange} fontSize="large" /> : <Box />
                 }

@@ -82,12 +82,18 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
           <Typography variant={isMobile ? 'h3' : 'h2'}>
             {isProvince ? cityName.substring(0, 7) : cityName}, {cityWeatherResponse.city.country}
           </Typography>
-          <Typography variant={isMobile ? 'h5' : 'h4'}>{`${getDate(
-            cityWeatherResponse.list[value as number].dt
-          )}`}</Typography>
-          <Typography variant={isMobile ? 'h5' : 'h4'}>{`${getTime(
-            cityWeatherResponse.list[value as number].dt
-          )}`}</Typography>
+          <Box className="flex justify center items-center">
+            <CalendarMonthIcon className="mr-2" fontSize="large" />
+            <Typography variant={isMobile ? 'h5' : 'h4'}>{`${getDate(
+              cityWeatherResponse.list[value as number].dt
+            )}`}</Typography>
+          </Box>
+          <Box className="flex justify center items-center">
+            <AccessTimeIcon className="mr-2" fontSize="large" />
+            <Typography variant={isMobile ? 'h5' : 'h4'}>{`${getTime(
+              cityWeatherResponse.list[value as number].dt
+            )}`}</Typography>
+          </Box>
         </Grid>
         <Grid container item className="flex flex-row justify-center items-center">
           <Grid item className="flex flex-col justify-center items-center">
@@ -106,16 +112,15 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             <Box className="flex  items-center">
               <ThermostatIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                `Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C`
+                Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <AccessibilityNewIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                ` Feels Like:{' '}
-                {Math.round(cityWeatherResponse.list[value as number].main.feels_like)}
-                °C`
+                Feels Like: {Math.round(cityWeatherResponse.list[value as number].main.feels_like)}
+                °C
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
@@ -131,29 +136,15 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             <Box className="flex  items-center">
               <OpacityIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                ` Humidity: %{Math.round(cityWeatherResponse.list[value as number].main.humidity)}`
+                Humidity: %{Math.round(cityWeatherResponse.list[value as number].main.humidity)}
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <AirIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                `Wind Speed: {Math.round(cityWeatherResponse.list[value as number].wind.speed)}m/s`
+                Wind Speed: {Math.round(cityWeatherResponse.list[value as number].wind.speed)}m/s
               </Typography>
-            </Box>
-            <Divider sx={{ borderBottomWidth: 2 }} />
-            <Box className="flex  items-center">
-              <CalendarMonthIcon className="mr-2" />
-              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>{`${getDate(
-                cityWeatherResponse.list[value as number].dt
-              )}`}</Typography>
-            </Box>
-            <Divider sx={{ borderBottomWidth: 2 }} />
-            <Box className="flex  items-center">
-              <AccessTimeIcon className="mr-2" />
-              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>{`${getTime(
-                cityWeatherResponse.list[value as number].dt
-              )}`}</Typography>
             </Box>
           </Grid>
         </Grid>
