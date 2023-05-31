@@ -2,9 +2,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Box, IconButton, TextField, Typography } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { SetStateAction, useState } from 'react';
 
-const SearchBar: React.FC<{ setChecked: any }> = ({ setChecked }) => {
+const SearchBar: React.FC<{ setChecked: React.Dispatch<SetStateAction<boolean>> }> = ({
+  setChecked
+}) => {
   const [enteredCityName, setEnteredCityName] = useState<string>();
   const router = useRouter();
 
@@ -14,8 +16,8 @@ const SearchBar: React.FC<{ setChecked: any }> = ({ setChecked }) => {
 
   const onSubmitHandler = (event: any) => {
     event.preventDefault();
-    setChecked(false);
     setEnteredCityName(event.target.value);
+    router.asPath != '/' && setChecked((prev) => !prev);
     router.push(`/${enteredCityName}`);
   };
   return (
