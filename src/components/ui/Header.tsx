@@ -1,9 +1,9 @@
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import SearchBar from '../searchBar/SearchBar';
-import { useTheme } from '@mui/material/styles';
 
 const Header = () => {
   const { pathname } = useRouter();

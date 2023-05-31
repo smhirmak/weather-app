@@ -7,10 +7,10 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import ThermostatIcon from '@mui/icons-material/Thermostat';
 import { Box, Divider, Grid, Slider, Typography, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import Video from './Video';
-import { useTheme } from '@mui/material/styles';
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherResponse }) => {
@@ -69,9 +69,14 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
 
   const isProvince = cityWeatherResponse.city.name.includes('Province');
 
+  const myLoader = ({ src }: any) => {
+    return `https://openweathermap.org/img/wn/${
+      cityWeatherResponse.list[value as number].weather[0].icon
+    }@2x.png`;
+  };
+
   return (
-    <Box className={isMobile ? 'mt-16' : 'mt-52'}>
-      {/* <Video rawDescription={rawDescription} /> */}
+    <Box className="mt-16">
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
           <Typography variant={isMobile ? 'h3' : 'h2'}>
@@ -86,12 +91,14 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
         </Grid>
         <Grid container item className="flex flex-row justify-center items-center">
           <Grid item className="flex flex-col justify-center items-center">
-            <img
+            <Image
+              loader={myLoader}
               src={`https://openweathermap.org/img/wn/${
                 cityWeatherResponse.list[value as number].weather[0].icon
               }@2x.png`}
               alt=""
               width={isMobile ? 120 : 180}
+              height={isMobile ? 120 : 180}
             />
             <Typography>{cityWeatherResponse.list[value as number].weather[0].main}</Typography>
             <Typography>{description}</Typography>

@@ -1,11 +1,10 @@
-import type { AppProps } from 'next/app';
-import '../main.css';
-import { EmotionCache } from '@emotion/react';
-import Layout from '../components/ui/Layout';
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
-import { CssBaseline, ThemeProvider } from '@mui/material';
 import { darkTheme } from '@/theme/theme';
+import createCache from '@emotion/cache';
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import type { AppProps } from 'next/app';
+import Layout from '../components/ui/Layout';
+import '../main.css';
 
 export interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;

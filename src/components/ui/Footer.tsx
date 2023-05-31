@@ -1,12 +1,10 @@
-import React from 'react';
-import { Container, Grid, Box, Typography, useMediaQuery } from '@mui/material';
-import MediaLinks from '../links/MediaLinks';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
+import MediaLinks from '../links/MediaLinks';
 
 const Footer = () => {
   const themePage = useTheme();

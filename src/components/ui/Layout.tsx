@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import { Typography } from '@mui/material';
 import Footer from './Footer';
+import Header from './Header';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

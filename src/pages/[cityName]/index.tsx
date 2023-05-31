@@ -1,12 +1,11 @@
 import { AxiosClient } from '@/axios';
-import Loading from '@/components/ui/Loading';
 import CityWeather from '@/components/weatherDetail/CityWeather';
+import Video from '@/components/weatherDetail/Video';
 import IWeather from '@/types/IWeather';
+import { Typography } from '@mui/material';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import React, { Suspense } from 'react';
-import { Typography } from '@mui/material';
-import Video from '@/components/weatherDetail/Video';
 
 const CityPage: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherResponse }) => {
   return (

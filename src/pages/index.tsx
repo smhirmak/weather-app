@@ -6,6 +6,9 @@ import Head from 'next/head';
 export default function Home() {
   const themePage = useTheme();
   const isMobile = useMediaQuery(themePage.breakpoints.down('md'));
+  const myLoader = ({ src }: any) => {
+    return 'background.jpg';
+  };
   return (
     <Container>
       <Head>
@@ -27,6 +30,7 @@ export default function Home() {
           opacity: 0.8
         }}
       />
+
       <Grid container>
         <Grid
           item

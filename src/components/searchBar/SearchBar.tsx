@@ -1,12 +1,11 @@
-import { Typography, Box, TextField, IconButton } from '@mui/material';
-import { useRouter } from 'next/router';
-import React, { useState } from 'react';
-import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
+import { Box, IconButton, TextField, Typography } from '@mui/material';
+import InputAdornment from '@mui/material/InputAdornment';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 const SearchBar = () => {
   const [enteredCityName, setEnteredCityName] = useState<string>();
-
   const router = useRouter();
 
   const changeHandle = (event: any) => {
