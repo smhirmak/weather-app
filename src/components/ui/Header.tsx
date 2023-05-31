@@ -57,21 +57,18 @@ const Header = () => {
 
       <Grid item className="flex justify-center items-center">
         {pathname !== '/' && (
-          <Box>
-            <Box>
-              <FormControlLabel
-                className={isMobile ? 'flex justify-center items-center mt-4' : 'contents '}
-                control={
-                  !checked ? <SearchIcon onClick={handleChange} fontSize="large" /> : <Box />
-                }
-                label=""
-              />
-              <Slide direction="down" in={checked} mountOnEnter unmountOnExit>
-                <Box sx={{ m: isMobile ? -3 : 1 }}>
-                  <SearchBar setChecked={setChecked} />
-                </Box>
-              </Slide>
-            </Box>
+          <Box className="flex justify-center items-center">
+            <FormControlLabel
+              className={isMobile ? 'flex justify-center items-center mt-4' : 'contents '}
+              control={!checked ? <SearchIcon onClick={handleChange} fontSize="large" /> : <Box />}
+              label={''}
+              labelPlacement="bottom"
+            />
+            <Slide direction="down" in={checked} mountOnEnter unmountOnExit>
+              <Box sx={{ m: isMobile ? -3 : 1 }}>
+                <SearchBar setChecked={setChecked} />
+              </Box>
+            </Slide>
           </Box>
         )}
       </Grid>
