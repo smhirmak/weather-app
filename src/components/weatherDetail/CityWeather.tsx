@@ -99,14 +99,14 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
           <Grid item className="flex flex-col justify-center ml-10">
             <Box className="flex  items-center">
               <ThermostatIcon className="mr-2" />
-              <Typography variant={isMobile ? 'h6' : 'h5'}>
+              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
                 Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <AccessibilityNewIcon className="mr-2" />
-              <Typography variant={isMobile ? 'h6' : 'h5'}>
+              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
                 Feels Like: {Math.round(cityWeatherResponse.list[value as number].main.feels_like)}
                 °C
               </Typography>
@@ -114,7 +114,7 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <BloodtypeIcon className="mr-2" />
-              <Typography variant={isMobile ? 'h6' : 'h5'}>
+              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
                 {`Max/Min: ${Math.round(
                   cityWeatherResponse.list[value as number].main.temp_max
                 )}/${Math.round(cityWeatherResponse.list[value as number].main.temp_min)}°C`}
@@ -123,28 +123,28 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <OpacityIcon className="mr-2" />
-              <Typography variant={isMobile ? 'h6' : 'h5'}>
+              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
                 Humidity: %{Math.round(cityWeatherResponse.list[value as number].main.humidity)}
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <AirIcon className="mr-2" />
-              <Typography variant={isMobile ? 'h6' : 'h5'}>
+              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
                 Wind Speed: {Math.round(cityWeatherResponse.list[value as number].wind.speed)}m/s
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <CalendarMonthIcon className="mr-2" />
-              <Typography variant={isMobile ? 'h6' : 'h5'}>{`${getDate(
+              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>{`${getDate(
                 cityWeatherResponse.list[value as number].dt
               )}`}</Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <AccessTimeIcon className="mr-2" />
-              <Typography variant={isMobile ? 'h6' : 'h5'}>{`${getTime(
+              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>{`${getTime(
                 cityWeatherResponse.list[value as number].dt
               )}`}</Typography>
             </Box>
