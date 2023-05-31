@@ -71,7 +71,7 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
 
   return (
     <Box className={isMobile ? 'mt-16' : 'mt-52'}>
-      <Video rawDescription={rawDescription} />
+      {/* <Video rawDescription={rawDescription} /> */}
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
           <Typography variant={isMobile ? 'h3' : 'h2'}>

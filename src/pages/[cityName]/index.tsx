@@ -1,9 +1,12 @@
 import { AxiosClient } from '@/axios';
+import Loading from '@/components/ui/Loading';
 import CityWeather from '@/components/weatherDetail/CityWeather';
 import IWeather from '@/types/IWeather';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Typography } from '@mui/material';
+import Video from '@/components/weatherDetail/Video';
 
 const CityPage: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherResponse }) => {
   return (
@@ -14,7 +17,10 @@ const CityPage: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherResp
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <CityWeather cityWeatherResponse={cityWeatherResponse} />
+      <Video rawDescription={cityWeatherResponse.list[0].weather[0].description} />
+      <Suspense fallback={<Typography variant="h1">Loading...</Typography>}>
+        <CityWeather cityWeatherResponse={cityWeatherResponse} />
+      </Suspense>
     </React.Fragment>
   );
 };
