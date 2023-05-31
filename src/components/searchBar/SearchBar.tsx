@@ -21,7 +21,7 @@ const SearchBar: React.FC<{ setChecked: React.Dispatch<SetStateAction<boolean>> 
     router.push(`/${enteredCityName}`);
   };
   return (
-    <form>
+    <form onSubmit={onSubmitHandler}>
       <Box className="flex justify-center items-center pt-10">
         <TextField
           variant="outlined"
