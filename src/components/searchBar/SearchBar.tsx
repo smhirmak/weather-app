@@ -7,7 +7,7 @@ import React, { SetStateAction, useState } from 'react';
 const SearchBar: React.FC<{ setChecked: React.Dispatch<SetStateAction<boolean>> }> = ({
   setChecked
 }) => {
-  const [enteredCityName, setEnteredCityName] = useState<string>();
+  const [enteredCityName, setEnteredCityName] = useState<string>('');
   const router = useRouter();
 
   const changeHandle = (event: any) => {

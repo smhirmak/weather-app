@@ -18,7 +18,6 @@ const Header = () => {
   const handleChange = () => {
     setChecked((prev) => !prev);
   };
-  console.log(checked);
   return (
     <Grid container className="flex flex-row justify-center items-center mt-8">
       <Grid item xs={12} className="flex justify-center items-center">

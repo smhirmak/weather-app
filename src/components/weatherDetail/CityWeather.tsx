@@ -91,8 +91,7 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
         </Grid>
         <Grid container item className="flex flex-row justify-center items-center">
           <Grid item className="flex flex-col justify-center items-center">
-            <Image
-              loader={myLoader}
+            <img
               src={`https://openweathermap.org/img/wn/${
                 cityWeatherResponse.list[value as number].weather[0].icon
               }@2x.png`}
@@ -107,15 +106,16 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             <Box className="flex  items-center">
               <ThermostatIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C
+                `Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C`
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <AccessibilityNewIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                Feels Like: {Math.round(cityWeatherResponse.list[value as number].main.feels_like)}
-                °C
+                ` Feels Like:{' '}
+                {Math.round(cityWeatherResponse.list[value as number].main.feels_like)}
+                °C`
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
@@ -131,14 +131,14 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             <Box className="flex  items-center">
               <OpacityIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                Humidity: %{Math.round(cityWeatherResponse.list[value as number].main.humidity)}
+                ` Humidity: %{Math.round(cityWeatherResponse.list[value as number].main.humidity)}`
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
             <Box className="flex  items-center">
               <AirIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                Wind Speed: {Math.round(cityWeatherResponse.list[value as number].wind.speed)}m/s
+                `Wind Speed: {Math.round(cityWeatherResponse.list[value as number].wind.speed)}m/s`
               </Typography>
             </Box>
             <Divider sx={{ borderBottomWidth: 2 }} />
