@@ -1,7 +1,7 @@
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
 import React from 'react';
-import { useTheme } from '@mui/material/styles';
-import { useMediaQuery } from '@mui/material';
 const desktopImages = [
   '/raining-h.jpg',
   '/clear-sky-h.jpg',

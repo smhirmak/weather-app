@@ -70,7 +70,7 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
   const isProvince = cityWeatherResponse.city.name.includes('Province');
 
   return (
-    <Box className="mt-16">
+    <Box className={isMobile ? 'mt-8' : 'mt-16'}>
       <WeatherImage
         rawDescription={cityWeatherResponse.list[value as number].weather[0].description}
       />
