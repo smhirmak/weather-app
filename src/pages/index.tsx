@@ -2,6 +2,7 @@ import SearchBar from '@/components/searchBar/SearchBar';
 import { Container, Grid, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Home() {
   const themePage = useTheme();
@@ -15,7 +16,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.ico" />
       </Head>
-      <img
+      <Image
         src={isMobile ? '/background-mobile.jpg' : '/background.jpg'}
         alt=""
         width={100}
