@@ -19,7 +19,7 @@ export default function Home() {
       <Image
         src={isMobile ? '/background-mobile.jpg' : '/background.jpg'}
         alt=""
-        width={100}
+        width={200}
         height={100}
         style={{
           position: 'fixed',
