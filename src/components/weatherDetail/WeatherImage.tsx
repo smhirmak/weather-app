@@ -2,21 +2,29 @@ import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
 import React from 'react';
+// const desktopImages = [
+//   '/raining-h.jpg',
+//   '/clear-sky-h.jpg',
+//   '/clouds-h.jpg',
+//   '/thunderstorm-h.jpg',
+//   '/snowing-h.jpg',
+//   '/foggy-h.jpg'
+// ];
 const desktopImages = [
-  '/raining-h.jpg',
-  '/clear-sky-h.jpg',
-  '/clouds-h.jpg',
-  '/thunderstorm-h.jpg',
-  '/snowing-h.jpg',
-  '/foggy-h.jpg'
+  'https://images.pexels.com/photos/989941/pexels-photo-989941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/1647177/pexels-photo-1647177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/391522/pexels-photo-391522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/1114688/pexels-photo-1114688.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/3462588/pexels-photo-3462588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/845619/pexels-photo-845619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 ];
 const mobileImages = [
-  '/raining-v.jpg',
-  '/clear-sky-v.jpg',
-  '/clouds-v.jpg',
-  '/thunderstorm-v.jpg',
-  '/snowing-v.jpg',
-  '/foggy-v.jpg'
+  'https://images.pexels.com/photos/2448749/pexels-photo-2448749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/2096795/pexels-photo-2096795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/2947810/pexels-photo-2947810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/909253/pexels-photo-909253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/1061623/pexels-photo-1061623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 ];
 
 const WeatherImage: React.FC<{ rawDescription: string }> = ({ rawDescription }) => {
