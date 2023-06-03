@@ -13,7 +13,9 @@ const Footer = () => {
   return (
     <Box
       className={
-        isMobile && asPath !== '/' ? 'flex justify-center mt-20 mb-5' : 'flex justify-center mt-52'
+        isMobile && asPath !== '/'
+          ? 'flex justify-center mt-20 mb-5'
+          : 'flex justify-center mt-52 mb-5'
       }>
       <Grid container className="flex justify-center" columnSpacing={isMobile ? 3 : 20}>
         <Grid item>

@@ -60,7 +60,13 @@ const Header = () => {
           <Box className="flex justify-center items-center">
             <FormControlLabel
               className={isMobile ? 'flex justify-center items-center mt-4' : 'contents '}
-              control={!checked ? <SearchIcon onClick={handleChange} fontSize="large" /> : <Box />}
+              control={
+                !checked ? (
+                  <SearchIcon onClick={handleChange} fontSize="large" className="mr-1" />
+                ) : (
+                  <Box />
+                )
+              }
               label={''}
               labelPlacement="bottom"
             />

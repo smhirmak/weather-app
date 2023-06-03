@@ -32,7 +32,7 @@ const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
       <Grid container>
         <Grid
           item
-          className={isMobile ? 'flex justify-center mt-20' : 'flex justify-center mt-24'}
+          className={isMobile ? 'flex justify-center w-96 mt-20' : 'flex justify-center mt-24'}
           xs={12}>
           <SearchBar />
         </Grid>

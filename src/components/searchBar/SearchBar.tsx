@@ -20,7 +20,7 @@ const SearchBar: React.FC<{ setChecked?: any | undefined }> = ({ setChecked }) =
   };
   return (
     <form onSubmit={onSubmitHandler}>
-      <Box className="flex justify-center items-center pt-10">
+      <Box className="flex justify-center items-center w-auto pt-10">
         <TextField
           variant="outlined"
           label="Please enter a city name"
