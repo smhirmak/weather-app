@@ -26,7 +26,7 @@ const WeatherImage: React.FC<{ rawDescription: string }> = ({ rawDescription }) 
   return (
     <>
       {rawDescription.includes('rain') ? (
-        <Image
+        <img
           src={isMobile ? mobileImages[0] : desktopImages[0]}
           width={isMobile ? 200 : 1920}
           height={isMobile ? 200 : 1080}
@@ -37,7 +37,7 @@ const WeatherImage: React.FC<{ rawDescription: string }> = ({ rawDescription }) 
         ''
       )}
       {rawDescription.includes('clear') ? (
-        <Image
+        <img
           src={isMobile ? mobileImages[1] : desktopImages[1]}
           width={isMobile ? 200 : 1920}
           height={isMobile ? 200 : 1080}
@@ -48,7 +48,7 @@ const WeatherImage: React.FC<{ rawDescription: string }> = ({ rawDescription }) 
         ''
       )}
       {rawDescription.includes('clouds') ? (
-        <Image
+        <img
           src={isMobile ? mobileImages[2] : desktopImages[2]}
           width={isMobile ? 200 : 1920}
           height={isMobile ? 200 : 1080}
@@ -59,7 +59,7 @@ const WeatherImage: React.FC<{ rawDescription: string }> = ({ rawDescription }) 
         ''
       )}
       {rawDescription.includes('thunderstorm') ? (
-        <Image
+        <img
           src={isMobile ? mobileImages[3] : desktopImages[3]}
           width={isMobile ? 200 : 1920}
           height={isMobile ? 200 : 1080}
@@ -70,7 +70,7 @@ const WeatherImage: React.FC<{ rawDescription: string }> = ({ rawDescription }) 
         ''
       )}
       {rawDescription.includes('snow') ? (
-        <Image
+        <img
           src={isMobile ? mobileImages[4] : desktopImages[4]}
           width={isMobile ? 200 : 1920}
           height={isMobile ? 200 : 1080}
@@ -81,7 +81,7 @@ const WeatherImage: React.FC<{ rawDescription: string }> = ({ rawDescription }) 
         ''
       )}
       {rawDescription.includes('mist') ? (
-        <Image
+        <img
           src={isMobile ? mobileImages[5] : desktopImages[5]}
           width={isMobile ? 200 : 1920}
           height={isMobile ? 200 : 1080}
@@ -91,27 +91,6 @@ const WeatherImage: React.FC<{ rawDescription: string }> = ({ rawDescription }) 
       ) : (
         ''
       )}
-
-      {/* <video
-      autoPlay
-      muted
-      loop
-      style={{
-        position: 'fixed',
-        right: 0,
-        bottom: 0,
-        minWidth: '100%',
-        minHeight: '100%',
-        zIndex: -1,
-        opacity: 0.4
-      }}>
-      {rawDescription.includes('rain') ? <source src={video[0]} type="video/mp4" /> : ''}
-      {rawDescription.includes('clear') && <source src={video[1]} type="video/mp4" />}
-      {rawDescription.includes('clouds') && <source src={video[2]} type="video/mp4" />}
-      {rawDescription.includes('thunderstorm') && <source src={video[3]} type="video/mp4" />}
-      {rawDescription.includes('snow') && <source src={video[4]} type="video/mp4" />}
-      {rawDescription.includes('mist') && <source src={video[5]} type="video/mp4" />}
-    </video> */}
     </>
   );
 };
