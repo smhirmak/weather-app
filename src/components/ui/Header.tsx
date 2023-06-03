@@ -22,7 +22,7 @@ const Header = () => {
     <Grid container className="flex flex-row justify-center items-center mt-8">
       <Grid item xs={11.3} className="flex justify-center items-center">
         <Box>
-          <Link href={'/'} style={{ textDecoration: 'none', color: 'white' }}>
+          <Link href={'/'} className="no-underline text-white">
             {!isMobile ? (
               <Box className="flex flex-row justify-center items-center">
                 <Typography className="text-5xl">Weather</Typography>
@@ -65,7 +65,7 @@ const Header = () => {
               labelPlacement="bottom"
             />
             <Slide direction="down" in={checked} mountOnEnter unmountOnExit>
-              <Box sx={{ m: isMobile ? -3 : 1 }}>
+              <Box className={isMobile ? '-m-3' : 'm-1'}>
                 <SearchBar setChecked={setChecked} />
               </Box>
             </Slide>

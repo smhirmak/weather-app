@@ -113,7 +113,7 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
                 Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C
               </Typography>
             </Box>
-            <Divider sx={{ borderBottomWidth: 2 }} />
+            <Divider className="border-b-2" />
             <Box className="flex  items-center">
               <AccessibilityNewIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
@@ -121,7 +121,7 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
                 °C
               </Typography>
             </Box>
-            <Divider sx={{ borderBottomWidth: 2 }} />
+            <Divider className="border-b-2" />
             <Box className="flex  items-center">
               <BloodtypeIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
@@ -130,14 +130,14 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
                 )}/${Math.round(cityWeatherResponse.list[value as number].main.temp_min)}°C`}
               </Typography>
             </Box>
-            <Divider sx={{ borderBottomWidth: 2 }} />
+            <Divider className="border-b-2" />
             <Box className="flex  items-center">
               <OpacityIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
                 Humidity: %{Math.round(cityWeatherResponse.list[value as number].main.humidity)}
               </Typography>
             </Box>
-            <Divider sx={{ borderBottomWidth: 2 }} />
+            <Divider className="border-b-2" />
             <Box className="flex  items-center">
               <AirIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
@@ -147,18 +147,21 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
           </Grid>
         </Grid>
         <Grid container item className="flex justify-center items-center px-12" xs={12}>
-          <Slider
-            aria-label="Temperature"
-            value={value ? value : 0}
-            valueLabelDisplay="off"
-            onChange={handleChange}
-            sx={{ my: 2 }}
-            defaultValue={0}
-            step={1}
-            marks={marks}
-            min={0}
-            max={39}
-          />
+          <Box className={isMobile ? 'w-full' : 'w-3/4 '}>
+            <Slider
+              aria-label="Temperature"
+              value={value ? value : 0}
+              valueLabelDisplay="off"
+              onChange={handleChange}
+              className="my-2"
+              sx={{ color: '#e7e5e4' }}
+              defaultValue={0}
+              step={1}
+              marks={marks}
+              min={0}
+              max={39}
+            />
+          </Box>
         </Grid>
       </Grid>
     </Box>

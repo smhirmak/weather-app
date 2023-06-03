@@ -27,22 +27,15 @@ const SearchBar: React.FC<{ setChecked?: any | undefined }> = ({ setChecked }) =
           onChange={changeHandle}
           value={enteredCityName}
           InputProps={{
-            startAdornment: <SearchIcon />,
             endAdornment: (
               <InputAdornment position="end">
                 <IconButton
                   type="submit"
                   edge="end"
-                  sx={{
-                    height: 56,
-                    borderBottomLeftRadius: 5,
-                    borderTopLeftRadius: 5,
-                    borderTopRightRadius: 10,
-                    borderBottomRightRadius: 10
-                  }}
+                  className="rounded-b-md rounded-t-md h-18"
                   color="success"
                   onClick={onSubmitHandler}>
-                  <Typography className="text-gray-400 hover:text-gray-100">SEARCH</Typography>
+                  <SearchIcon sx={{ color: 'gray' }} />
                 </IconButton>
               </InputAdornment>
             )

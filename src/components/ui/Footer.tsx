@@ -25,17 +25,17 @@ const Footer = () => {
               <MediaLinks
                 href="https://github.com/smhirmak"
                 name="GitHub"
-                icon={<GitHubIcon sx={{ mr: 1 }} />}
+                icon={<GitHubIcon className="mr-2" />}
               />
               <MediaLinks
                 href="https://www.linkedin.com/in/muhammed-semih-irmak-307890152/"
                 name="LinkedIn"
-                icon={<LinkedInIcon sx={{ mr: 1 }} />}
+                icon={<LinkedInIcon className="mr-2" />}
               />
               <MediaLinks
                 href="https://twitter.com/smhirmak"
                 name="Twitter"
-                icon={<TwitterIcon sx={{ mr: 1 }} />}
+                icon={<TwitterIcon className="mr-2" />}
               />
             </Box>
           </Box>

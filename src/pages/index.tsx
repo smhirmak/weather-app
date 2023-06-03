@@ -22,12 +22,8 @@ const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
         alt=""
         width={isMobile ? 200 : 1500}
         height={100}
+        className="fixed right-0 bottom-0 min-w-full min-h-full"
         style={{
-          position: 'fixed',
-          right: 0,
-          bottom: 0,
-          minWidth: '100%',
-          minHeight: '100%',
           zIndex: -1,
           opacity: isRouteLoading ? 0.2 : 0.8
         }}

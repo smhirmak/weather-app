@@ -8,11 +8,7 @@ const MediaLinks: React.FC<{ href: string; icon?: any; name: string }> = ({ href
         href={href}
         underline="hover"
         color={'#d3d3d3'}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
+        className="flex- justify-center items-center">
         {' '}
         <Box display={'flex'}>
           {icon} <Typography variant="subtitle1">{name}</Typography>
