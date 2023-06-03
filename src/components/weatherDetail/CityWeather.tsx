@@ -8,9 +8,9 @@ import OpacityIcon from '@mui/icons-material/Opacity';
 import ThermostatIcon from '@mui/icons-material/Thermostat';
 import { Box, Divider, Grid, Slider, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import WeatherImage from './WeatherImage';
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherResponse }) => {
@@ -69,14 +69,12 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
 
   const isProvince = cityWeatherResponse.city.name.includes('Province');
 
-  const myLoader = ({ src }: any) => {
-    return `https://openweathermap.org/img/wn/${
-      cityWeatherResponse.list[value as number].weather[0].icon
-    }@2x.png`;
-  };
-
   return (
     <Box className="mt-16">
+      <WeatherImage
+        rawDescription={cityWeatherResponse.list[value as number].weather[0].description}
+      />
+
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
           <Typography variant={isMobile ? 'h3' : 'h2'}>
