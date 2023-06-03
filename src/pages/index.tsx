@@ -3,8 +3,9 @@ import { Container, Grid, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Head from 'next/head';
 import Image from 'next/image';
+import React from 'react';
 
-export default function Home() {
+const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
   const themePage = useTheme();
   const isMobile = useMediaQuery(themePage.breakpoints.down('md'));
 
@@ -19,7 +20,7 @@ export default function Home() {
       <Image
         src={isMobile ? '/background-mobile.jpg' : '/background.jpg'}
         alt=""
-        width={200}
+        width={isMobile ? 200 : 1500}
         height={100}
         style={{
           position: 'fixed',
@@ -28,7 +29,7 @@ export default function Home() {
           minWidth: '100%',
           minHeight: '100%',
           zIndex: -1,
-          opacity: 0.8
+          opacity: isRouteLoading ? 0.2 : 0.8
         }}
       />
 
@@ -42,4 +43,6 @@ export default function Home() {
       </Grid>
     </Container>
   );
-}
+};
+
+export default Home;
