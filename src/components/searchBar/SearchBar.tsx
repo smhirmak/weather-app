@@ -26,6 +26,7 @@ const SearchBar: React.FC<{ setChecked?: any | undefined }> = ({ setChecked }) =
           label="Please enter a city name"
           onChange={changeHandle}
           value={enteredCityName}
+          color="primary"
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
