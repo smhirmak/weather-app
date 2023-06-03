@@ -62,7 +62,7 @@ const Header = () => {
               className={isMobile ? 'flex justify-center items-center mt-4' : 'contents '}
               control={
                 !checked ? (
-                  <SearchIcon onClick={handleChange} fontSize="large" className="mr-1" />
+                  <SearchIcon onClick={handleChange} fontSize="large" className="mr-1 mb-5" />
                 ) : (
                   <Box />
                 )
