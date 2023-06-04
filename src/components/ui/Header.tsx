@@ -10,7 +10,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import SearchAutoComplete from '../searchBar/SearchAutoComplete';
 
 const Header = () => {
-  const { pathname } = useRouter();
+  const { pathname, asPath } = useRouter();
 
   const themePage = useTheme();
   const isMobile = useMediaQuery(themePage.breakpoints.down('md'));

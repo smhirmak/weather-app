@@ -68,15 +68,15 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
   }
   const description = splitDesc.join(' ');
 
-  const calculateValue = () => {
-    getTime(cityWeatherResponse.list[value as number].dt);
+  const calculateValue: any = () => {
+    return getTime(cityWeatherResponse.list[value as number].dt);
   };
 
   return (
     <Box className={isMobile ? 'mt-8' : 'mt-16'}>
-      <WeatherImage
+      {/* <WeatherImage
         rawDescription={cityWeatherResponse.list[value as number].weather[0].description}
-      />
+      /> */}
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
           <Typography variant={isMobile ? 'h3' : 'h2'}>
@@ -153,9 +153,11 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             <Slider
               aria-label="Temperature"
               value={value ? value : 0}
+              valueLabelDisplay="auto"
               onChange={handleChange}
               className="my-2"
               sx={{ color: '#e7e5e4' }}
+              scale={calculateValue}
               defaultValue={0}
               step={1}
               marks={marks}
