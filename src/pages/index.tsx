@@ -1,3 +1,4 @@
+import SearchAutoComplete from '@/components/searchBar/SearchAutoComplete';
 import SearchBar from '@/components/searchBar/SearchBar';
 import { Container, Grid, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -34,7 +35,7 @@ const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
           item
           className={isMobile ? 'flex justify-center w-96 mt-20' : 'flex justify-center mt-24'}
           xs={12}>
-          <SearchBar />
+          <SearchAutoComplete />
         </Grid>
       </Grid>
     </Container>

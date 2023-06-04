@@ -10,6 +10,7 @@ import { Box, Divider, Grid, Slider, Typography, useMediaQuery } from '@mui/mate
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import SearchAutoComplete from '../searchBar/SearchAutoComplete';
 import WeatherImage from './WeatherImage';
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -67,18 +68,19 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
   }
   const description = splitDesc.join(' ');
 
-  const isProvince = cityWeatherResponse.city.name.includes('Province');
+  const calculateValue = () => {
+    getTime(cityWeatherResponse.list[value as number].dt);
+  };
 
   return (
     <Box className={isMobile ? 'mt-8' : 'mt-16'}>
       <WeatherImage
         rawDescription={cityWeatherResponse.list[value as number].weather[0].description}
       />
-
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
           <Typography variant={isMobile ? 'h3' : 'h2'}>
-            {isProvince ? cityName.substring(0, 7) : cityName}, {cityWeatherResponse.city.country}
+            {cityName.replace(' Province', '')}, {cityWeatherResponse.city.country}
           </Typography>
           <Box className="flex justify center items-center">
             <CalendarMonthIcon className="mr-2" fontSize="large" />
@@ -151,7 +153,6 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             <Slider
               aria-label="Temperature"
               value={value ? value : 0}
-              valueLabelDisplay="off"
               onChange={handleChange}
               className="my-2"
               sx={{ color: '#e7e5e4' }}
