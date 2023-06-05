@@ -32,7 +32,7 @@ const Header = () => {
           left: 10,
           rotate: '315deg'
         }}>
-        <GitHubIcon fontSize="large" />
+        <GitHubIcon fontSize="large" sx={{ color: '#d1d5db' }} />
       </Link>
       <Grid container className="flex flex-row justify-center items-center mt-8">
         <Grid item xs={11.3} className="flex justify-center items-center">

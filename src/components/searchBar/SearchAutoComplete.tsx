@@ -32,7 +32,7 @@ const SearchAutoComplete: React.FC = () => {
   };
   return (
     <form onSubmit={onSubmitHandler}>
-      <Grid container className={isMobile ? 'w-64' : 'w-80'} xs={12}>
+      <Grid container className={isMobile ? 'w-64' : 'w-80'}>
         <Grid
           item
           className={

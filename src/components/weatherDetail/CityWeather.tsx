@@ -80,20 +80,34 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
           <Typography variant={isMobile ? 'h3' : 'h2'}>
-            {cityName.replace(' Province', '')}, {cityWeatherResponse.city.country}
+            {`${cityName.replace(' Province', '')}, ${cityWeatherResponse.city.country}`}
           </Typography>
-          <Box className="flex justify center items-center">
-            <CalendarMonthIcon className="mr-2" fontSize="large" />
-            <Typography variant={isMobile ? 'h5' : 'h4'}>{`${getDate(
-              cityWeatherResponse.list[value as number].dt
-            )}`}</Typography>
-          </Box>
-          <Box className="flex justify center items-center">
-            <AccessTimeIcon className="mr-2" fontSize="large" />
-            <Typography variant={isMobile ? 'h5' : 'h4'}>{`${getTime(
-              cityWeatherResponse.list[value as number].dt
-            )}`}</Typography>
-          </Box>
+          <Grid container className="flex flex-row justify-center items-center">
+            <Grid item className="flex flex-col justify-center items-start">
+              <Box className="flex  items-center">
+                <CalendarMonthIcon className="mr-2" fontSize="large" />
+                <Typography
+                  variant={isMobile ? 'h6' : 'h5'}
+                  className={isMobile ? 'my-2' : ''}>{`${getDate(
+                  cityWeatherResponse.list[value as number].dt
+                )}`}</Typography>
+              </Box>
+              <Box className="flex justify-center items-center">
+                <AccessTimeIcon className="mr-2" fontSize="large" />
+                <Typography variant={isMobile ? 'h6' : 'h5'}>{`${getTime(
+                  cityWeatherResponse.list[value as number].dt
+                )}`}</Typography>
+              </Box>
+            </Grid>
+            <Grid item className="flex flex-col justify-center items-center">
+              <Box className="flex  items-center">
+                <ThermostatIcon fontSize="large" />
+                <Typography variant={isMobile ? 'h5' : 'h4'}>
+                  Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid container item className="flex flex-row justify-center items-center">
           <Grid item className="flex flex-col justify-center items-center">
@@ -105,17 +119,12 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
               width={isMobile ? 120 : 180}
               height={isMobile ? 120 : 180}
             />
-            <Typography>{cityWeatherResponse.list[value as number].weather[0].main}</Typography>
-            <Typography>{description}</Typography>
+            <Typography className="text-base">
+              {cityWeatherResponse.list[value as number].weather[0].main}
+            </Typography>
+            <Typography className="text-sm">{description}</Typography>
           </Grid>
           <Grid item className="flex flex-col justify-center ml-10">
-            <Box className="flex  items-center">
-              <ThermostatIcon className="mr-2" />
-              <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C
-              </Typography>
-            </Box>
-            <Divider className="border-b-2" />
             <Box className="flex  items-center">
               <AccessibilityNewIcon className="mr-2" />
               <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
@@ -148,7 +157,7 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
             </Box>
           </Grid>
         </Grid>
-        <Grid container item className="flex justify-center items-center px-12" xs={12}>
+        <Grid container item className="flex justify-center items-center px-6" xs={12}>
           <Box className={isMobile ? 'w-full' : 'w-3/4 '}>
             <Slider
               aria-label="Temperature"

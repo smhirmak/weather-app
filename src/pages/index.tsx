@@ -18,7 +18,7 @@ const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.ico" />
       </Head>
-      <Image
+      {/* <Image
         src={isMobile ? '/background-mobile.jpg' : '/background.jpg'}
         alt=""
         width={isMobile ? 200 : 1500}
@@ -28,7 +28,7 @@ const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
           zIndex: -1,
           opacity: isRouteLoading ? 0.2 : 0.8
         }}
-      />
+      /> */}
 
       <Grid container>
         <Grid
