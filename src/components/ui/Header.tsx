@@ -20,7 +20,7 @@ const Header = () => {
     setChecked((prev) => !prev);
   };
   return (
-    <>
+    <header>
       <Link
         href={'https://github.com/smhirmak/weather-app'}
         style={{
@@ -100,7 +100,7 @@ const Header = () => {
           )}
         </Grid>
       </Grid>
-    </>
+    </header>
   );
 };
 
