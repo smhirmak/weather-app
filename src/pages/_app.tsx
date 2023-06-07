@@ -40,9 +40,10 @@ export default function App(props: MyAppProps) {
         <CssBaseline />
         <CacheProvider value={cache}>
           <Layout>
-            {loading && (
-              <Box className={`fixed inset-y-1/2 inset-x-1/3 z-2 ${isMobile ? 'pl-8' : 'pl-56'}`}>
-                <CircularProgress size={75} />
+            {!loading && (
+              <Box
+                className={`absolute inset-y-1/2 inset-x-1/3 z-2 ${isMobile ? 'pl-7' : 'pl-56'}`}>
+                <CircularProgress size={75} color="error" />
               </Box>
             )}
             <Component {...pageProps} isRouteLoading={loading} />
