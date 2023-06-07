@@ -40,7 +40,7 @@ export default function App(props: MyAppProps) {
         <CssBaseline />
         <CacheProvider value={cache}>
           <Layout>
-            {!loading && (
+            {loading && (
               <Box
                 className={`absolute inset-y-1/2 inset-x-1/3 z-2 ${isMobile ? 'pl-7' : 'pl-56'}`}>
                 <CircularProgress size={75} color="error" />
