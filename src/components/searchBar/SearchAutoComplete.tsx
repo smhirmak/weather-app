@@ -4,16 +4,14 @@ import {
   Box,
   Grid,
   IconButton,
-  Stack,
-  TextField,
-  Typography,
   InputAdornment,
+  TextField,
   useMediaQuery
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import data from '../../../states.json';
-import { useTheme } from '@mui/material/styles';
 
 const filteredStates = data.filter((state) => state.country_code == 'TR');
 const states = filteredStates.map((state) => state.name.replace(' Province', ''));
@@ -33,14 +31,7 @@ const SearchAutoComplete: React.FC = () => {
   return (
     <form onSubmit={onSubmitHandler}>
       <Grid container className={isMobile ? 'w-64' : 'w-80'}>
-        <Grid
-          item
-          className={
-            isMobile
-              ? 'flex justify-center items-center '
-              : 'flex justify-center items-center pl-14'
-          }
-          xs={11}>
+        <Grid item className={`flex justify-center items-center ${!isMobile && 'pl-12'}`} xs={11}>
           <Autocomplete
             fullWidth
             className="w-80"

@@ -1,3 +1,4 @@
+import GitHubIcon from '@mui/icons-material/GitHub';
 import SearchIcon from '@mui/icons-material/Search';
 import { Box, FormControlLabel, Grid, Slide, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -5,8 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import SearchBar from '../searchBar/SearchBar';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import SearchAutoComplete from '../searchBar/SearchAutoComplete';
 
 const Header = () => {

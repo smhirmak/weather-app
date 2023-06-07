@@ -1,9 +1,7 @@
 import SearchAutoComplete from '@/components/searchBar/SearchAutoComplete';
-import SearchBar from '@/components/searchBar/SearchBar';
 import { Container, Grid, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Head from 'next/head';
-import Image from 'next/image';
 import React from 'react';
 
 const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
@@ -31,10 +29,7 @@ const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
       /> */}
 
       <Grid container>
-        <Grid
-          item
-          className={isMobile ? 'flex justify-center w-96 mt-20' : 'flex justify-center mt-24'}
-          xs={12}>
+        <Grid item className={`flex justify-center ${isMobile ? 'w-96 mt-20' : 'mt-24'}`} xs={12}>
           <SearchAutoComplete />
         </Grid>
       </Grid>

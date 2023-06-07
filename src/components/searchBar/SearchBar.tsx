@@ -1,5 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
-import { Box, IconButton, TextField, Typography } from '@mui/material';
+import { Box, IconButton, TextField } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';

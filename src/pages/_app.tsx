@@ -1,9 +1,9 @@
 import { darkTheme } from '@/theme/theme';
 import createCache from '@emotion/cache';
 import { CacheProvider, EmotionCache } from '@emotion/react';
-import { CssBaseline, Box, ThemeProvider, useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Box, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
+import { useTheme } from '@mui/material/styles';
 import type { AppProps } from 'next/app';
 import { Router } from 'next/router';
 import { useState } from 'react';
@@ -41,12 +41,7 @@ export default function App(props: MyAppProps) {
         <CacheProvider value={cache}>
           <Layout>
             {loading && (
-              <Box
-                className={
-                  isMobile
-                    ? 'fixed inset-y-1/2 inset-x-1/3 pl-8 z-2'
-                    : 'fixed inset-y-1/2 inset-x-1/3 pl-56 z-2'
-                }>
+              <Box className={`fixed inset-y-1/2 inset-x-1/3 z-2 ${isMobile ? 'pl-8' : 'pl-56'}`}>
                 <CircularProgress size={75} />
               </Box>
             )}

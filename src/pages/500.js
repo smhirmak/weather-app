@@ -1,7 +1,7 @@
 import { Box, Button, Container, Typography, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useTheme } from '@mui/material/styles';
 
 export default function Custom500() {
   const themePage = useTheme();

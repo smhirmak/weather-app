@@ -10,8 +10,6 @@ import { Box, Divider, Grid, Slider, Typography, useMediaQuery } from '@mui/mate
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import SearchAutoComplete from '../searchBar/SearchAutoComplete';
-import WeatherImage from './WeatherImage';
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherResponse }) => {
@@ -74,9 +72,6 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
 
   return (
     <Box className={isMobile ? 'mt-8' : 'mt-16'}>
-      {/* <WeatherImage
-        rawDescription={cityWeatherResponse.list[value as number].weather[0].description}
-      /> */}
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
           <Typography variant={isMobile ? 'h3' : 'h2'}>
