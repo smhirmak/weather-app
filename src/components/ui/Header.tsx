@@ -27,11 +27,18 @@ const Header = () => {
           textDecoration: 'none',
           color: 'black',
           position: 'fixed',
-          top: 10,
-          left: 10,
+          top: isMobile ? 10 : 35,
+          left: isMobile ? 10 : 5,
           rotate: '315deg'
         }}>
-        <GitHubIcon fontSize="large" sx={{ color: '#d1d5db' }} />
+        <Box className="flex flex-col justify-center items-center">
+          <GitHubIcon fontSize="large" sx={{ color: '#d1d5db' }} />
+          {!isMobile && (
+            <Typography variant="subtitle2" color={'white'}>
+              Open Source Code
+            </Typography>
+          )}
+        </Box>
       </Link>
       <Grid container className="flex flex-row justify-center items-center mt-8">
         <Grid item xs={11.3} className="flex justify-center items-center">
