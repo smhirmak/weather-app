@@ -9,7 +9,7 @@ import { useState } from 'react';
 import SearchAutoComplete from '../searchBar/SearchAutoComplete';
 
 const Header = () => {
-  const { pathname, asPath } = useRouter();
+  const { pathname } = useRouter();
 
   const themePage = useTheme();
   const isMobile = useMediaQuery(themePage.breakpoints.down('md'));
@@ -26,7 +26,7 @@ const Header = () => {
         style={{
           textDecoration: 'none',
           color: 'black',
-          position: 'fixed',
+          position: 'absolute',
           top: isMobile ? 10 : 35,
           left: isMobile ? 10 : 5,
           rotate: '315deg'

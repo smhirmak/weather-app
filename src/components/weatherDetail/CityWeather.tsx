@@ -74,12 +74,12 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
     <Box className={isMobile ? 'mt-8' : 'mt-16'}>
       <Grid container className="flex flex-col flex-column">
         <Grid item className="flex flex-col justify-center items-center mb-4" xs={12}>
-          <Typography variant={isMobile ? 'h3' : 'h2'}>
+          <Typography variant={isMobile ? 'h3' : 'h2'} className="mb-3">
             {`${cityName.replace(' Province', '')}, ${cityWeatherResponse.city.country}`}
           </Typography>
-          <Grid container className="flex flex-row justify-center items-center">
-            <Grid item className="flex flex-col justify-center items-start">
-              <Box className="flex  items-center">
+          <Grid container spacing={1} className="flex flex-row justify-center items-center">
+            <Grid item className="flex flex-col justify-start items-start">
+              <Box className="flex justify-center items-center">
                 <CalendarMonthIcon className="mr-2" fontSize="large" />
                 <Typography
                   variant={isMobile ? 'h6' : 'h5'}
@@ -95,7 +95,7 @@ const CityWeather: React.FC<{ cityWeatherResponse: IWeather }> = ({ cityWeatherR
               </Box>
             </Grid>
             <Grid item className="flex flex-col justify-center items-center">
-              <Box className="flex  items-center">
+              <Box className="flex items-center">
                 <ThermostatIcon fontSize="large" />
                 <Typography variant={isMobile ? 'h5' : 'h4'}>
                   Temp: {Math.round(cityWeatherResponse.list[value as number].main.temp)}°C

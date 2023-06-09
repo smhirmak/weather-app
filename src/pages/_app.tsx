@@ -9,6 +9,7 @@ import { Router } from 'next/router';
 import { useState } from 'react';
 import Layout from '../components/ui/Layout';
 import '../main.css';
+import Loading from '@/components/ui/Loading';
 
 export interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -40,12 +41,7 @@ export default function App(props: MyAppProps) {
         <CssBaseline />
         <CacheProvider value={cache}>
           <Layout>
-            {loading && (
-              <Box
-                className={`absolute inset-y-1/2 inset-x-1/3 z-2 ${isMobile ? 'pl-7' : 'pl-56'}`}>
-                <CircularProgress size={75} color="error" />
-              </Box>
-            )}
+            {loading && <Loading />}
             <Component {...pageProps} isRouteLoading={loading} />
           </Layout>
         </CacheProvider>

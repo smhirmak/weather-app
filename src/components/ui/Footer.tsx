@@ -1,7 +1,7 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
 import MediaLinks from '../links/MediaLinks';
@@ -13,10 +13,9 @@ const Footer = () => {
   return (
     <footer>
       <Box
+        sx={{ width: '100%' }}
         className={
-          isMobile && asPath !== '/'
-            ? 'flex justify-center mt-20 mb-5'
-            : 'flex justify-center mt-52 mb-5'
+          asPath !== '/' ? 'relative bottom-0 left-0 mb-5 mt-20' : 'absolute bottom-0 left-0 mb-5'
         }>
         <Grid container className="flex justify-center" columnSpacing={isMobile ? 3 : 20}>
           <Grid item>
