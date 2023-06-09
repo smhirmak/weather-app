@@ -54,7 +54,7 @@ const SearchAutoComplete: React.FC = () => {
                 className="rounded-b-md rounded-t-md "
                 color="success"
                 onClick={onSubmitHandler}>
-                <SearchIcon fontSize="large" sx={{ color: 'gray' }} />
+                <SearchIcon fontSize="large" sx={{ color: '#e5e7eb' }} />
               </IconButton>
             </InputAdornment>
           ) : (
@@ -62,32 +62,6 @@ const SearchAutoComplete: React.FC = () => {
           )}
         </Grid>
       </Grid>
-      {/* <Stack className="flex flex-row justify-center items-center w-auto pt-10">
-        <Autocomplete
-          className="w-64"
-          value={completeValue}
-          forcePopupIcon={false}
-          onChange={(event: any, newValue: string | null) => {
-            setCompleteValue(newValue);
-          }}
-          onClick={onSubmitHandler}
-          options={states}
-          renderInput={(params) => <TextField {...params} label="Please enter a city name" />}
-        />
-        {completeValue !== null && (
-          // <InputAdornment className="flex justify-center items-center pt-10" position="end">
-          <InputAdornment position="end">
-            <IconButton
-              type="submit"
-              edge="end"
-              className="rounded-b-md rounded-t-md "
-              color="success"
-              onClick={onSubmitHandler}>
-              <SearchIcon sx={{ color: 'gray' }} />
-            </IconButton>
-          </InputAdornment>
-        )}
-      </Stack> */}
     </form>
   );
 };

@@ -16,18 +16,6 @@ const Home: React.FC<{ isRouteLoading: boolean }> = ({ isRouteLoading }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.ico" />
       </Head>
-      {/* <Image
-        src={isMobile ? '/background-mobile.jpg' : '/background.jpg'}
-        alt=""
-        width={isMobile ? 200 : 1500}
-        height={100}
-        className="fixed right-0 bottom-0 min-w-full min-h-full"
-        style={{
-          zIndex: -1,
-          opacity: isRouteLoading ? 0.2 : 0.8
-        }}
-      /> */}
-
       <Grid container>
         <Grid item className={`flex justify-center ${isMobile ? 'w-96 mt-20' : 'mt-24'}`} xs={12}>
           <SearchAutoComplete />
