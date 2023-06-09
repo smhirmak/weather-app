@@ -1,6 +1,6 @@
 # Project Title
 
-This project is designed to show weather forecasts and developed using <b>React</b>, NextJS, TypeScript, Tailwind.
+This project is designed to show weather forecasts and developed using <b>React</b>, <b>NextJS</b>, <b>TypeScript</b>, <b>Tailwind</b>.
 
 ## Demo
 
