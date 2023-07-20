@@ -40,7 +40,7 @@ const Header = () => {
           )}
         </Box>
       </Link>
-      <Grid container className="flex flex-row justify-center items-center mt-8">
+      <Grid container className="flex flex-row justify-center items-center pt-8">
         <Grid item xs={11.3} className="flex justify-center items-center">
           <Box>
             <Link href={'/'} className="no-underline text-white">

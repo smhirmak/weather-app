@@ -36,8 +36,8 @@ export default function App(props: MyAppProps) {
       <div id="__next">
         <CssBaseline />
         <CacheProvider value={cache}>
+          {loading && <Loading />}
           <Layout>
-            {loading && <Loading />}
             <Component {...pageProps} isRouteLoading={loading} />
           </Layout>
         </CacheProvider>
