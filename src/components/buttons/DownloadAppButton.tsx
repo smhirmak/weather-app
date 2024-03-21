@@ -37,7 +37,7 @@ const DownloadAppButton = () => {
     if (typeof document !== 'undefined') {
 
       const installApp = document.getElementById('installApp');
-      installApp.addEventListener('click', async () => {
+      installApp!.addEventListener('click', async () => {
           if (deferredPrompt !== null) {
               deferredPrompt.prompt();
               const { outcome } = await deferredPrompt.userChoice;
