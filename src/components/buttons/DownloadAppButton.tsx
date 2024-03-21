@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 
 const DownloadAppButton = () => {
-    const [installPromptEvent, setInstallPromptEvent] = useState(null);
+    const [installPromptEvent, setInstallPromptEvent] = useState<any>(null);
 
     useEffect(() => {
       window.addEventListener('beforeinstallprompt', (e: any) => {
