@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import SearchAutoComplete from '../searchBar/SearchAutoComplete';
 import DownloadAppButton from '../buttons/DownloadAppButton';
+import { useSearchParams } from 'next/navigation'
 
 const Header = () => {
   const { pathname } = useRouter();
@@ -20,6 +21,10 @@ const Header = () => {
   const handleChange = () => {
     setChecked((prev) => !prev);
   };
+
+  const searchParams = useSearchParams()
+
+  const isPWA = searchParams.get('pwa') !== null
 
   return (
     <header>
@@ -101,7 +106,7 @@ const Header = () => {
             </Box>
           )}
         </Grid>
-      <DownloadAppButton />
+      {!isPWA && <DownloadAppButton />}
       </Grid>
     </header>
   );
