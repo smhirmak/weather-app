@@ -1,6 +1,7 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import XIcon from '@mui/icons-material/X';
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
@@ -37,7 +38,7 @@ const Footer = () => {
                 <MediaLinks
                   href="https://twitter.com/smhirmak"
                   name="Twitter"
-                  icon={<TwitterIcon className="mr-2" />}
+                  icon={<XIcon className="mr-2" />}
                 />
               </Box>
             </Box>
