@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import SearchAutoComplete from '../searchBar/SearchAutoComplete';
+import DownloadAppButton from '../buttons/DownloadAppButton';
 
 const Header = () => {
   const { pathname } = useRouter();
@@ -19,6 +20,7 @@ const Header = () => {
   const handleChange = () => {
     setChecked((prev) => !prev);
   };
+
   return (
     <header>
       <Link
@@ -99,6 +101,7 @@ const Header = () => {
             </Box>
           )}
         </Grid>
+      <DownloadAppButton />
       </Grid>
     </header>
   );
