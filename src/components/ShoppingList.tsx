@@ -1,11 +1,13 @@
 
-const ShoppingList: React.FC<{ id: string, label: string }> = ({ id, label }) => {
+const ShoppingList: React.FC<{ id: string, label: string, checked: boolean, onChange: (id: string) => void }> = ({ id, label, onChange, checked }) => {
     return (
         <div className="flex items-center">
             <input
                 type="checkbox"
                 id={id}
                 name={id}
+                checked={checked}
+                onChange={() => onChange(id)}
                 className={`
                     peer relative h-4 w-4 outline-none border-none grid items-center m-0 mr-4 cursor-pointer appearance-none
                     before:content-[""] before:absolute before:h-[2px] before:top-auto before:bg-[#4f29f0] before:rounded-sm before:w-0 before:right-[60%] before:origin-[right_bottom]
