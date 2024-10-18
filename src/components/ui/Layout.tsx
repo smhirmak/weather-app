@@ -7,10 +7,12 @@ import { Analytics } from '@vercel/analytics/react';
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <Container>
-      <Header />
-      {children}
-      <Analytics />
-      <Footer />
+      <div className='flex flex-col min-h-screen'>
+        <Header />
+        {children}
+        <Analytics />
+        <Footer />
+      </div>
     </Container>
   );
 };

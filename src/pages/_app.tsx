@@ -38,7 +38,9 @@ export default function App(props: MyAppProps) {
         <CacheProvider value={cache}>
           {loading && <Loading />}
           <Layout>
-            <Component {...pageProps} isRouteLoading={loading} />
+            <div style={{ flexGrow: '1' }}>
+              <Component {...pageProps} isRouteLoading={loading} />
+            </div>
           </Layout>
         </CacheProvider>
       </div>
